@@ -5,11 +5,11 @@
 [credential]
 	helper = cache
 
-[commit]
-	template = ~/.gitmessage
-
 [push]
 	default = simple
+
+[commit]
+	template = ~/.gitmessage
 
 [color]
 	diff = auto
