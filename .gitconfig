@@ -9,7 +9,7 @@
 	default = simple
 
 [commit]
-	template = ~/.gitmessage
+	verbose = true
 
 [color]
 	diff = auto
