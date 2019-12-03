@@ -5,6 +5,9 @@
 [credential]
 	helper = cache
 
+[commit]
+	template = ~/.gitmessage
+
 [push]
 	default = simple
 
