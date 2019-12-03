@@ -1,5 +1,25 @@
 [user]
 	email = boundlessvolatilecrow@gmail.com
 	name = august-norkko
+
 [credential]
 	helper = cache
+
+[push]
+	default = simple
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	pager = true
+	ui = true
+
+[color "status"]
+	added = green
+	changed = red bold
+	untracked = magenta bold
+
+[color "branch"]
+	remote = yellow
