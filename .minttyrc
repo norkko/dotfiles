@@ -1,0 +1,9 @@
+BoldAsFont=-1
+FontHeight=11
+Font=Consolas
+BackgroundColour=0,101,202
+ThemeFile=nord
+Term=xterm-256color
+Transparency=off
+CursorColour=221,156,226
+
