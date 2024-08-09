@@ -1,0 +1,20 @@
+{
+    "layer": "top",
+    "height": 25,
+    "output": "DP-2",
+    "modules-left": [], //"hyprland/mode"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["clock"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+  "clock": {
+  	"format": "{:%F %H:%M}",
+  	"format-alt": "{:%F %H:%M}",
+  	"interval": 1
+  }
+}
