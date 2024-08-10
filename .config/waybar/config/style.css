@@ -1,4 +1,15 @@
 
-#clock {
-  margin-right: 10px;
+* {
+  background-color: transparent;
+  color: #fff;
 }
+
+#clock, #cpu, #pulseaudio, #memory, #temperature, #disk, #custom-playing {
+  margin-right: 6px;
+}
+
+window#waybar.Chromium {
+  background: #000;
+}
+
+
