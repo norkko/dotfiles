@@ -8,14 +8,12 @@
     "hyprland/window": {
         "max-length": 50
     },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
     "clock": {
   	    "format": "{:%H:%M}",
   	    "format-alt": "{:%H:%M}",
-  	    "interval": 1
+  	    "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "{:%F }",
     },
     "pulseaudio": {
         "scroll-step": 5, // %, can be a float
@@ -32,7 +30,7 @@
         "format": "   {percentage}%",
         "max-length": 10,
         "tooltip": true,
-        "tooltip-format": "RAM - {used}GiB used"
+        "tooltip-format": "{used}GiB used\n{total}GiB total"
     },
     "temperature": {
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
@@ -48,12 +46,15 @@
         "path": "/",
         "tooltip": true,
         "unit": "GB",
-        "tooltip-format":  "Available {free} of {total}"
+        "tooltip-format":  "{free} of {total}"
     },
     "custom/playing": {
         "format": "   {}",
         "max-length": 40,
         "interval": 5,
-        "exec": "/home/august/.config/waybar/config/player.sh",// 2> /dev/null"
+        "exec": "$HOME/.config/waybar/config/player.sh",
+        "tooltip": true,
+        "tooltip-format": "{}",
+        "on-click": "spotify-launcher"
     }
 }
