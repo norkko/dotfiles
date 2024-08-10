@@ -9,7 +9,7 @@
 }
 
 window#waybar.Chromium {
-  background-color: #5d615e;
+  background-color: #000;/*#5d615e*/;
 }
 
 

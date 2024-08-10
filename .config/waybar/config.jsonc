@@ -2,7 +2,7 @@
     "layer": "bottom",
     "height": 25,
     "output": "DP-2",
-    "modules-left": [],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["custom/playing", "disk", "temperature", "cpu", "memory", "pulseaudio", "clock"],
     "hyprland/window": {
@@ -52,9 +52,6 @@
         "format": "   {}",
         "max-length": 40,
         "interval": 5,
-        "exec": "$HOME/.config/waybar/config/player.sh",
-        "tooltip": true,
-        "tooltip-format": "{}",
-        "on-click": "spotify-launcher"
+        "exec": "$HOME/.config/waybar/player.sh"
     }
 }

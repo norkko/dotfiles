@@ -1,0 +1,11 @@
+[global]
+	frame_width = 0
+	font = DejaVu Sans 12
+	corner_radius = 3
+	background = "#383C4A"
+	markup = full
+	format = "<span color='#fff'>%s\n%b</span>"
+	notification_limit = 10
+	min_icon_size = 12
+	max_icon_size = 48
+	monitor = DP-2
