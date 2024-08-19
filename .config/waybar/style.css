@@ -1,15 +1,70 @@
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+  opacity: 0.8;
+}
 
 * {
-  background-color: transparent;
+  font-size: 14px;
   color: #fff;
 }
 
-#clock, #cpu, #pulseaudio, #memory, #temperature, #disk, #custom-playing {
-  margin-right: 6px;
+#clock,
+#cpu,
+#pulseaudio,
+#memory,
+#network,
+#custom-dunst,
+#temperature,
+#disk,
+#custom-playing,
+#custom-power {
+  background: #192020;
+  color: #fff;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-window#waybar.Chromium {
-  background-color: #000;/*#5d615e*/;
+#custom-power {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-right: 5px;
 }
 
+#custom-dunst {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 
+#custom-weather {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #364444;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#workspaces * {
+  font-size: 18px;
+  color: #5d615e;
+
+}
+
+#workspaces {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #c5c8c6;
+}
+
+#workspaces button {
+  opacity: 0.5;
+}
+
+#workspaces button.active {
+  opacity: 1;
+}
