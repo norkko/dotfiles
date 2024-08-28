@@ -8,6 +8,10 @@ current_player=$(echo "$players" | sed -n "$((PLAYER_INDEX + 1))p")
 player_status=$(playerctl -p "$current_player" status 2> /dev/null)
 artist=$(playerctl -p "$current_player" metadata artist 2> /dev/null)
 title=$(playerctl -p "$current_player" metadata title 2> /dev/null)
+album=$(playerctl -p "$current_player" metadata album 2> /dev/null)
+
+bar=""
+tooltip=""
 
 if [ -n "$artist" ]; then
     bar="$artist - $title"
@@ -16,7 +20,8 @@ else
 fi
 
 if [ "$player_status" == "Paused" ]; then
-    echo "[$player_status] $bar"
-else
-    echo "$bar"
+    bar="[$player_status] $bar"
 fi
+
+tooltip="<b>${current_player^}</b>\n$bar\n$album"
+echo "{\"text\":\"$bar\", \"tooltip\":\"$tooltip\"}"

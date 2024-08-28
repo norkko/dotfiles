@@ -1,20 +1,26 @@
 {
     "layer": "top",
-    "height": 26,
-    "exclusive": false,
+    "height": 25,
+    "exclusive": true,
     "output": "DP-2",
     "modules-left": [
+        "custom/menu",
+        "network",
+        "custom/power",
         "systemd-failed-units"
     ],
     "modules-right": [
         "hyprland/workspaces"
     ],
     "modules-center": [
+        "custom/vesktop",
+        "custom/steam",
+        "custom/spotify",
+        "custom/thunderbird",
         "custom/dunst",
         "custom/playing",
         "pulseaudio",
         "clock",
-        "custom/power"
     ],
     "hyprland/window": {
         "max-length": 50
@@ -29,20 +35,24 @@
     "custom/dunst": {
         "exec": "~/.config/waybar/dunst.sh",
         "on-click": "dunstctl set-paused toggle",
-        "restart-interval": 1
+        "restart-interval": 1,
+        "tooltip": true,
+        "tooltip-format": "Pause notifications"
     },
     "clock": {
         "format": "{:%H:%M} ",
         "format-alt": "{:%H:%M} ",
         "interval": 1,
         "tooltip": true,
-        "tooltip-format": "{:%F } ",
+        "tooltip-format": "{} ",
     },
     "network": {
         "format-wifi": "{} ({signalStrength}%) 󰖩 ",
         "format-ethernet": "󰖩 ",
-        "format-disconnected": " ",
-        "max-length": 50
+        "format-disconnected": "No network ",
+        "max-length": 50,
+        "tooltip": true,
+        "tooltip-format": "{ifname}\n{ipaddr}\n{signalStrength}"
     },
     "systemd-failed-units": {
         "hide-on-ok": false,
@@ -65,7 +75,8 @@
             "pavucontrol": "",
             "runelite": "",
             "vlc": "󰕼",
-            "sublime": ""
+            "sublime": "",
+            "vesktop": ""
         },
         "persistent-workspaces": {
             "DP-2": [
@@ -100,17 +111,44 @@
         "on-click-middle": "pavucontrol-qt"
     },
     "custom/playing": {
-        "format": " {} ",
+        "format": " {}",
         "max-length": 40,
         "interval": 1,
+        "return-type": "json",
         "exec": "$HOME/.config/waybar/player.sh",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
     },
     "custom/power": {
-        "format": "  ",
+        "format": " ",
         "on-click-right": "shutdown -h now",
-        "on-click": "swaylock --config $HOME/.config/swaylock/config"
+        "on-click": "swaylock --config $HOME/.config/swaylock/config",
+        "tooltip": true,
+        "tooltip-format": "Power"
+    },
+    "custom/menu": {
+        "format": " 󰀄 ",
+        "tooltip": false
+    },
+    "custom/vesktop": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "pgrep vesktop > /dev/null && hyprctl dispatch focuswindow 'vesktop' || hyprctl dispatch exec 'vesktop'"
+    },
+    "custom/steam": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "steam"
+    },
+    "custom/spotify": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "pgrep -x spotify > /dev/null && hyprctl dispatch focuswindow 'Spotify' || hyprctl dispatch exec 'spotify-launcher'"
+    },
+    "custom/thunderbird": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "pgrep -x thunderbird > /dev/null && hyprctl dispatch focuswindow 'thunderbird' || hyprctl dispatch exec 'thunderbird'"
     }
 }

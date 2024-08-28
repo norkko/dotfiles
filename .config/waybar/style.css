@@ -17,19 +17,37 @@ window#waybar {
 #temperature,
 #disk,
 #custom-playing,
-#custom-power {
+#custom-menu,
+#custom-power,
+#custom-vesktop,
+#custom-spotify,
+#custom-steam,
+#custom-thunderbird {
   background: #192020;
   color: #fff;
-  padding: 5px;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 8px;
 }
 
-#custom-power {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  margin-right: 5px;
+#clock:hover,
+#cpu:hover,
+#pulseaudio:hover,
+#memory:hover,
+#network:hover,
+#custom-dunst:hover,
+#temperature:hover,
+#disk:hover,
+#custom-menu:hover,
+#custom-vesktop:hover,
+#custom-playing:hover,
+#custom-power:hover,
+#custom-spotify:hover,
+#custom-steam:hover,
+#custom-thunderbird:hover {
+  color: #8cb8d1;
 }
+
 
 #custom-dunst {
   border-top-left-radius: 10px;
@@ -47,10 +65,30 @@ window#waybar {
   margin-bottom: 5px;
 }
 
+
+#custom-power,
+#clock,
+#custom-thunderbird {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#custom-thunderbird {
+  margin-right: 5px;
+}
+
+#custom-menu,
+#custom-vesktop {
+  margin-left: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-right: 4px;
+}
+
 #workspaces * {
   font-size: 18px;
-  color: #5d615e;
-
+  color: #fff;
+  padding-top: 3px;
 }
 
 #workspaces {
