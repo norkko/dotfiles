@@ -108,7 +108,8 @@
                 ""
             ]
         },
-        "on-click-middle": "pavucontrol-qt"
+        "on-click": "pavucontrol",
+        "on-click-middle": "kill pavucontrol"
     },
     "custom/playing": {
         "format": " {}",

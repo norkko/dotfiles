@@ -26,3 +26,5 @@
 
 [color "branch"]
 	remote = yellow
+[init]
+	defaultBranch = main
