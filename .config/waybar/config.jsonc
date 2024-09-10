@@ -6,6 +6,7 @@
     "modules-left": [
         "custom/menu",
         "network",
+        "custom/vpn",
         "custom/power",
         "systemd-failed-units"
     ],
@@ -13,10 +14,10 @@
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "custom/vesktop",
-        "custom/steam",
-        "custom/spotify",
-        "custom/thunderbird",
+        //"custom/vesktop",
+        //"custom/steam",
+        //"custom/spotify",
+        //"custom/thunderbird",
         "custom/dunst",
         "custom/playing",
         "pulseaudio",
@@ -26,14 +27,14 @@
         "max-length": 50
     },
     "custom/weather": {
-        "exec": "${HOME}/.config/waybar/get_weather.sh Stockholm+Sweden",
+        "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Stockholm+Sweden",
         "return-type": "json",
         "format": "{}",
         "tooltip": true,
         "interval": 3600
     },
     "custom/dunst": {
-        "exec": "~/.config/waybar/dunst.sh",
+        "exec": "~/.config/waybar/scripts/dunst.sh",
         "on-click": "dunstctl set-paused toggle",
         "restart-interval": 1,
         "tooltip": true,
@@ -52,7 +53,13 @@
         "format-disconnected": "No network ",
         "max-length": 50,
         "tooltip": true,
-        "tooltip-format": "{ifname}\n{ipaddr}\n{signalStrength}"
+        "tooltip-format": "{ifname}\n{ipaddr}"
+    },
+    "custom/vpn": {
+        "exec": "$HOME/.config/waybar/scripts/vpn.sh",
+        "return-type": "json",
+        "format": "{}",
+        "interval": 1
     },
     "systemd-failed-units": {
         "hide-on-ok": false,
@@ -62,7 +69,7 @@
         "user": false
     },
     "hyprland/workspaces": {
-        "format": "{windows}",
+        "format": " ",
         "format-window-separator": " ",
         "window-rewrite-default": "",
         "window-rewrite": {
@@ -116,7 +123,7 @@
         "max-length": 40,
         "interval": 1,
         "return-type": "json",
-        "exec": "$HOME/.config/waybar/player.sh",
+        "exec": "$HOME/.config/waybar/scripts/player.sh",
         "on-click": "playerctl play-pause",
         "on-scroll-up": "playerctl next",
         "on-scroll-down": "playerctl previous"
@@ -126,10 +133,10 @@
         "on-click-right": "shutdown -h now",
         "on-click": "swaylock --config $HOME/.config/swaylock/config",
         "tooltip": true,
-        "tooltip-format": "Power"
+        "tooltip-format": ""
     },
     "custom/menu": {
-        "format": " 󰀄 ",
+        "format": " 󱜚 ",
         "tooltip": false
     },
     "custom/vesktop": {
