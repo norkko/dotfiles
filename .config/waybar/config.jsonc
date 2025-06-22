@@ -1,162 +1,151 @@
 {
-    "layer": "top",
-    "height": 25,
-    "exclusive": true,
-    "output": "DP-2",
-    "modules-left": [
-        "custom/menu",
-        "network",
-        "custom/vpn",
-        "custom/power",
-        "systemd-failed-units"
-    ],
-    "modules-right": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        //"custom/vesktop",
-        //"custom/steam",
-        //"custom/spotify",
-        //"custom/thunderbird",
-        "custom/dunst",
-        "custom/playing",
-        "pulseaudio",
-        "clock",
-    ],
-    "hyprland/window": {
-        "max-length": 50
+  "layer": "top",
+  "height": 25,
+  "exclusive": true,
+  "output": "DP-2",
+  "modules-left": [
+    "custom/menu",
+    "network",
+    "custom/vpn",
+    "custom/power",
+    "systemd-failed-units",
+  ],
+  "modules-right": ["hyprland/workspaces"],
+  "modules-center": [
+    //"custom/vesktop",
+    //"custom/thunderbird",
+    "custom/dunst",
+    //    "custom/steam",
+    //    "custom/spotify",
+    //"custom/playing",
+    "pulseaudio",
+    "clock",
+  ],
+  "hyprland/window": {
+    "max-length": 50,
+  },
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Stockholm+Sweden",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+  },
+  "custom/dunst": {
+    "exec": "~/.config/waybar/scripts/dunst.sh",
+    "on-click": "dunstctl set-paused toggle",
+    "restart-interval": 1,
+    "tooltip": true,
+    "tooltip-format": "Pause notifications",
+  },
+  "clock": {
+    "format": "{:%H:%M} ",
+    "format-alt": "{:%H:%M} ",
+    "interval": 1,
+    "tooltip": true,
+    "tooltip-format": "{} ",
+  },
+  "network": {
+    "format-wifi": "{} ({signalStrength}%) 󰖩 ",
+    "format-ethernet": "󰖩 ",
+    "format-disconnected": "No network ",
+    "max-length": 50,
+    "tooltip": true,
+    "tooltip-format": "{ifname}\n{ipaddr}",
+  },
+  "custom/vpn": {
+    "exec": "$HOME/.config/waybar/scripts/vpn.sh",
+    "return-type": "json",
+    "format": "{}",
+    "interval": 1,
+  },
+  "systemd-failed-units": {
+    "hide-on-ok": false,
+    "format": "Err @ {nr_failed}",
+    "format-ok": "",
+    "system": true,
+    "user": false,
+  },
+  "hyprland/workspaces": {
+    "format": " ",
+    "format-window-separator": " ",
+    "window-rewrite-default": "",
+    "window-rewrite": {
+      "thunderbird": "",
+      "chromium": "",
+      "spotify": "",
+      "steam": "",
+      "code": "󰨞",
+      "alacritty": "",
+      "pavucontrol": "",
+      "runelite": "",
+      "vlc": "󰕼",
+      "sublime": "",
+      "vesktop": "",
     },
-    "custom/weather": {
-        "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Stockholm+Sweden",
-        "return-type": "json",
-        "format": "{}",
-        "tooltip": true,
-        "interval": 3600
+    "persistent-workspaces": {
+      "DP-2": [1, 3, 2, 88],
     },
-    "custom/dunst": {
-        "exec": "~/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
-        "restart-interval": 1,
-        "tooltip": true,
-        "tooltip-format": "Pause notifications"
+  },
+  "pulseaudio": {
+    "format": "{icon}    {volume}%",
+    "scroll-step": 5,
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "0% {icon} ",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
     },
-    "clock": {
-        "format": "{:%H:%M} ",
-        "format-alt": "{:%H:%M} ",
-        "interval": 1,
-        "tooltip": true,
-        "tooltip-format": "{} ",
-    },
-    "network": {
-        "format-wifi": "{} ({signalStrength}%) 󰖩 ",
-        "format-ethernet": "󰖩 ",
-        "format-disconnected": "No network ",
-        "max-length": 50,
-        "tooltip": true,
-        "tooltip-format": "{ifname}\n{ipaddr}"
-    },
-    "custom/vpn": {
-        "exec": "$HOME/.config/waybar/scripts/vpn.sh",
-        "return-type": "json",
-        "format": "{}",
-        "interval": 1
-    },
-    "systemd-failed-units": {
-        "hide-on-ok": false,
-        "format": "Err @ {nr_failed}",
-        "format-ok": "",
-        "system": true,
-        "user": false
-    },
-    "hyprland/workspaces": {
-        "format": " ",
-        "format-window-separator": " ",
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "thunderbird": "",
-            "chromium": "",
-            "spotify": "",
-            "steam": "",
-            "code": "󰨞",
-            "alacritty": "",
-            "pavucontrol": "",
-            "runelite": "",
-            "vlc": "󰕼",
-            "sublime": "",
-            "vesktop": ""
-        },
-        "persistent-workspaces": {
-            "DP-2": [
-                1,
-                3,
-                2,
-                88
-            ],
-        }
-    },
-    "pulseaudio": {
-        "format": "{icon}    {volume}%",
-        "scroll-step": 5,
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "0% {icon} ",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol",
-        "on-click-middle": "kill pavucontrol"
-    },
-    "custom/playing": {
-        "format": " {}",
-        "max-length": 40,
-        "interval": 1,
-        "return-type": "json",
-        "exec": "$HOME/.config/waybar/scripts/player.sh",
-        "on-click": "playerctl play-pause",
-        "on-scroll-up": "playerctl next",
-        "on-scroll-down": "playerctl previous"
-    },
-    "custom/power": {
-        "format": " ",
-        "on-click-right": "shutdown -h now",
-        "on-click": "swaylock --config $HOME/.config/swaylock/config",
-        "tooltip": true,
-        "tooltip-format": ""
-    },
-    "custom/menu": {
-        "format": " 󱜚 ",
-        "tooltip": false
-    },
-    "custom/vesktop": {
-        "format": "  ",
-        "tooltip": false,
-        "on-click": "pgrep vesktop > /dev/null && hyprctl dispatch focuswindow 'vesktop' || hyprctl dispatch exec 'vesktop'"
-    },
-    "custom/steam": {
-        "format": " ",
-        "tooltip": false,
-        "on-click": "steam"
-    },
-    "custom/spotify": {
-        "format": " ",
-        "tooltip": false,
-        "on-click": "pgrep -x spotify > /dev/null && hyprctl dispatch focuswindow 'Spotify' || hyprctl dispatch exec 'spotify-launcher'"
-    },
-    "custom/thunderbird": {
-        "format": "  ",
-        "tooltip": false,
-        "on-click": "pgrep -x thunderbird > /dev/null && hyprctl dispatch focuswindow 'thunderbird' || hyprctl dispatch exec 'thunderbird'"
-    }
+    "on-click": "pavucontrol",
+    "on-click-middle": "kill pavucontrol",
+  },
+  "custom/playing": {
+    "format": " {}",
+    "max-length": 40,
+    "interval": 1,
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/player.sh",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+  },
+  "custom/power": {
+    "format": " ",
+    "on-click-right": "shutdown -h now",
+    "on-click": "swaylock --config $HOME/.config/swaylock/config",
+    "tooltip": true,
+    "tooltip-format": "",
+  },
+  "custom/menu": {
+    "format": " 󱜚 ",
+    "tooltip": false,
+  },
+  "custom/vesktop": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "pgrep vesktop > /dev/null && hyprctl dispatch focuswindow 'vesktop' || hyprctl dispatch exec 'vesktop'",
+  },
+  "custom/steam": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "steam",
+  },
+  "custom/spotify": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "pgrep -x spotify > /dev/null && hyprctl dispatch focuswindow 'Spotify' || hyprctl dispatch exec 'spotify-launcher'",
+  },
+  "custom/thunderbird": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "pgrep -x thunderbird > /dev/null && hyprctl dispatch focuswindow 'thunderbird' || hyprctl dispatch exec 'thunderbird'",
+  },
 }
